@@ -1,0 +1,13 @@
+body {
+    background-color: #161717;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+    border: 0px;
+    color: white;
+    font-size: 40px;
+}

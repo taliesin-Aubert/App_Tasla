@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tesla_App</title>
+        <link href="Style.css" rel="stylesheet" type="text/css">
+    
+        <script>
+            function CercleOnClick(){
+                if(document.getElementById("CercleBouton").srcset == "ressources/Button.png"){
+                    document.getElementById("CercleBouton").srcset = "ressources/ButtonRed.png";
+                    document.getElementById("petitCercleBouton").hidden = false;
+                    document.getElementById("img_Securite").style.height = '22.5%';
+                    document.getElementById("img_Securite").style.width = '22.5%';
+                } else {
+                    document.getElementById("CercleBouton").srcset = "ressources/Button.png";
+                    document.getElementById("petitCercleBouton").hidden = true;
+                    document.getElementById("img_Securite").style.height = '30%';
+                    document.getElementById("img_Securite").style.width = '30%';
+                }
+            }
+
+            function VentilationOnClick(){
+                if(document.getElementById("VentilationBouton").srcset == "ressources/Fan.png"){
+                    document.getElementById("VentilationBouton").srcset = "ressources/FanLight.png"; 
+                    document.getElementById("texte_Active").hidden = false;
+                    
+                    str = document.getElementById("texte_Interieur").innerHTML;
+                    document.getElementById("texte_Interieur").innerHTML = "- " + str;
+                } else {
+                    document.getElementById("VentilationBouton").srcset = "ressources/Fan.png";
+                    document.getElementById("texte_Active").hidden = true;
+                    
+                    str = document.getElementById("texte_Interieur").innerHTML;
+                    str = str.substring(2);
+                    document.getElementById("texte_Interieur").innerHTML = str;
+                }
+            }
+
+            function ElectriciteOnClick(){
+                if(document.getElementById("ElectriciteBouton").srcset == "ressources/Thunder.png"){
+                    document.getElementById("ElectriciteBouton").srcset = "ressources/ThunderLight.png";
+                    document.getElementById("panneauElectricite").hidden = false;
+                } else {
+                    document.getElementById("ElectriciteBouton").srcset = "ressources/Thunder.png";
+                    document.getElementById("panneauElectricite").hidden = true;
+                }
+            }
+
+            function BoutonGaucheOnClick(){
+                str = document.getElementById("number").innerHTML;
+                str = str.substring(0, str.length - 2);
+                
+                if(str > 0) {str--;}
+                
+                if(str == 0) {document.getElementById("boutonGauche").innerText = "_";}
+
+                if(str < 16) {document.getElementById("boutonDroit").innerText = ">";}
+
+                document.getElementById("number").innerHTML = str + " A"
+            }
+
+            function BoutonDroiteOnClick(){
+                str = document.getElementById("number").innerHTML;
+                str = str.substring(0, str.length - 2);
+                
+                if(str < 16) {str++;}
+                
+                if(str == 16) {document.getElementById("boutonDroit").innerText = "_";}
+
+                if(str > 0) {document.getElementById("boutonGauche").innerText = "<";}
+
+                document.getElementById("number").innerHTML = str + " A"
+            }
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Simone</h1>
+            <button><img id="img_Profile" src="ressources/Profile.png" height="80%" width="70%";></button>         
+        </header>
+
+        <main>
+            <section id="Partie_Gauche">
+                <section id="info">
+                    <section id="batterie">
+                        <!--  <progress min="0" max="100" value="71"></progress> -->
+                        <img src="ressources/Batterie.png">
+                        <p id="pourcentage">71%</p>
+                    </section>
+                    <p id="Stationnée">Stationnée</p>
+                </section>
+
+                <section id="img_voiture">
+                    <img src="ressources/Tesla_01.png" height="100%" width="200%"> 
+                </section>
+            </section>
+            
+            <section id="Partie_Droit">
+                <section id="menu_haut">
+                    <button onclick="CercleOnClick()"><img id="CercleBouton" srcset="ressources/Button.png" height="60%" width="100%"></button>
+                    <button onclick="VentilationOnClick()"><img id="VentilationBouton" srcset="ressources/Fan.png" height="60%" width="100%"></button>
+                    <button onclick="ElectriciteOnClick()"><img id="ElectriciteBouton" srcset="ressources/Thunder.png" height="60%" width="100%"></button>
+                    <button><img srcset="ressources/Hood.png" height="60%" width="100%"></button>
+                </section>
+                <menu>
+                    <!-- Panneau Electricite -->
+                    <li id="panneauElectricite" hidden>
+                        <p id="limiteCharge">Limite charge: 100%</p>
+                        <progress min="0" max="100" value="71" width="50%" ></progress>
+                        <p id="kWh">24 kWh ajoutés durant la dernière recharge</p>
+                        <section id="modif_Ampère">
+                            <button id="boutonGauche" onclick="BoutonGaucheOnClick()"><</button>
+                            <p id="number">16 A</p>
+                            <button id="boutonDroit" onclick="BoutonDroiteOnClick()">_</button>
+                        </section>
+                    </li>
+
+                    <!-- Controles -->
+                    <li id="cadre_Controles">
+                        <button id="bouton_Controles">
+                            <section id="cadre_Controles">
+                                <img src="ressources/Car.png" height="28%" width="28%">
+                                <p id="Controle">Contrôles</p>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="%">
+                        </button>
+                    </li>
+                    
+                    <!-- Ventilation -->
+                    <li id="cadre_Ventilation">
+                        <button id="bouton_Ventilation">
+                            <section id="cadre_Ventilation">
+                                <img src="ressources/Fan.png" height="26%" width="26%">
+                                <section>
+                                    <p id="Ventilation">Ventilation</p>
+                                    <section id="texte_Ventilation">
+                                        <p id="texte_Active" hidden>Active</p>
+                                        <p id="texte_Interieur">Interieur 23°C</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="18%">
+                        </button>
+                    </li>
+                    
+                    <!-- Position -->
+                    <li id="cadre_Position">
+                        <button id="bouton_Position">
+                            <section id="cadre_Position">
+                                <img src="ressources/Cursor.png" height="30%" width="30%">
+                                <section id="texte_Position">
+                                    <p id="mot_Position">Position</p>
+                                    <p id="rue">13 Rue Paul Guigou</p>
+                                </section>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="18%">
+                        </button>
+                    </li>
+
+                    <!-- Planifier -->
+                    <li id="cadre_Planifier">
+                        <button id="bouton_Planifier">
+                            <section id="cadre_Planifier">
+                                <img src="ressources/Clock.png" height="30%" width="30%">
+                                <p id="Planifier">Planifier</p>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="18%">
+                        </button>
+
+                    </li>
+
+                    <!-- Sécurité -->
+                    <li id="cadre_Securite">
+                        <button id="bouton_Securite">
+                            <section id="cadre_Securite">
+                                <img id="img_Securite" src="ressources/Security.png" height="30%" width="30%">
+                                <section>
+                                    <p id="Securite">Sécurité</p>
+                                    <section id="texte_Securite">
+                                        <img id="petitCercleBouton" srcset="ressources/ButtonRed.png" height="7%" width="7%" hidden>
+                                        <p id="texte_Securite">iMoi - connectée</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="18%">
+                        </button>
+                    </li>
+
+                    <!-- Stats Recharge -->
+                    <li id="cadre_Recharge">
+                        <button id="bouton_Recharge" onclick="location.href='corps/Stat_Recharge.html'">
+                            <section id="cadre_Recharge">
+                                <img src="ressources/Stat.png" height="20%" width="20%">
+                                <p id="Recharge">Stats Recharge</p>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="18%">
+                        </button>
+                    </li>
+
+                    <!-- Mises à niveau -->
+                    <li id="cadre_Niveau">
+                        <button id="bouton_Niveau">
+                            <section id="cadre_Niveau">
+                                <img src="ressources/Lock.png" height="20%" width="20%">
+                                <p id="Niveau">Mises à niveau</p>
+                            </section>
+                            <img src="ressources/Expand.png" height="70%" width="18%">
+                        </button>
+                    </li>
+                </menu>
+
+                <section id="img_barre">
+                    <img src="ressources/img_barre.png" height="50%" width="30%">
+                </section>
+            </section>
+        </main>        
+    </body>
+</html>

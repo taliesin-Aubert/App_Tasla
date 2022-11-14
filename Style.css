@@ -1,0 +1,380 @@
+/* Html */
+body {
+    background-color: #161717;
+    overflow-y: hidden;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    margin: 0;
+}
+
+h2 {
+    color: white;
+    font-size: 25px;
+    margin: 0; 
+}
+
+button {
+    background: none;
+    cursor: pointer;
+    border: 0px;
+    color: white;
+    font-size: 40px;
+}
+
+li {
+    height: auto;
+    width: auto;
+    list-style: none;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (orientation: landscape) {
+    main {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+menu {
+    overflow-y: auto;
+    max-height: 20em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+progress {
+    background-color: green;
+    height: 5%;
+    width: 100%;
+}
+
+
+/* Partie Gauche */
+#Partie_Gauche {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1490px) {
+    #img_voiture {
+        z-index: -1;
+        margin-left: 5%;
+        display: flex;
+        justify-content: flex-start;
+        opacity: 0.4;
+    }
+}
+
+@media (min-width: 1490px) {
+    #img_voiture {
+        z-index: -1;
+        margin-left: 5%;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+#batterie {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#pourcentage {
+    color: gray;
+    font-size: 25px;
+    margin: 0;
+}
+
+#Stationnée {
+    color: gray;
+    font-size: 25px;
+    margin: 0;
+}
+
+
+/* Partie Droit */
+#Partie_Droit {
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#img_barre {
+    display: flex;
+    justify-content: center;
+}
+
+/* Menu Haut */
+#menu_haut {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Cadre Electricite */
+#panneauElectricite {
+    border: solid #212223;
+    background-color: #212223;
+    border-radius: 5%;
+    padding: 5px;
+}
+
+#modif_Ampère {
+    border: solid #333333;
+    background-color: #333333;
+    border-radius: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#boutonGauche {
+    color: gray;
+    background-color: #333333;
+    margin: 0;
+}
+
+#boutonDroit {
+    color: gray;
+    background-color: #333333;
+    margin: 0;
+}
+
+#limiteCharge {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+}
+
+#kWh {
+    color: gray;
+    font-size: 25px;
+    margin: 0;
+}
+
+#number {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+}
+
+/*Controles*/
+#cadre_Controles {
+    display: flex;
+    justify-content: start; 
+}
+
+#bouton_Controles {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#Controle {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Ventilation */
+#cadre_Ventilation {
+    display: flex;
+    justify-content: start;
+}
+
+#bouton_Ventilation {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#Ventilation {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+#texte_Ventilation {
+    display: flex;
+    justify-content: start;
+}
+
+#texte_Active {
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    margin-right: 5px;
+}
+
+#texte_Interieur {
+    color: gray;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Position */
+#cadre_Position {
+    display: flex;
+    justify-content: start;
+}
+
+#bouton_Position {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#mot_Position {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+#rue {
+    color: gray;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Planifier */
+#cadre_Planifier {
+    display: flex;
+    justify-content: start;
+}
+
+#bouton_Planifier {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#Planifier {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Sécurité */
+#cadre_Securite {
+    display: flex;
+    justify-content: start;
+}
+
+#bouton_Securite {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#Securite {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+#texte_Securite {
+    display: flex;
+    justify-content: start;
+}
+
+#petitCercleBouton {
+    margin: 0;
+    margin-right: 5px;
+}
+
+#texte_Securite {
+    color: gray;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Stats Recharge */
+#cadre_Recharge {
+    display: flex;
+    justify-content: start;
+}
+
+#bouton_Recharge {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#Recharge {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Mises à niveau */
+#cadre_Niveau {
+    display: flex;
+    justify-content: start;
+}
+
+#bouton_Niveau {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: start;
+    justify-content: space-between;
+}
+
+#Niveau {
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: left;
+}
+
+
+/* Scrollerbar */
+::-webkit-scrollbar {
+    background-color: #161717;
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
+}
